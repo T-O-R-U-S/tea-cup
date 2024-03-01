@@ -2,8 +2,7 @@
 	<div id="content">
 		<h1 class="p-5 py-20">Welcome to Tea Cup 🍵</h1>
 
-		<h3>Here are your pinned subjects.</h3>
-		<br>
+		<h3 class="mb-5">Here are your pinned subjects.</h3>
 
 		<nav class="flex space-x-10">
 			<a class="bg-yellow-50 text-amber-600 card" href="/gcse/psychology">
@@ -15,7 +14,7 @@
 				<b class="p-2">Psychology</b>
 			</a>
 
-			<a class="bg-cyan-50 text-sky-600 card" href="/gcse/psychology">
+			<a class="bg-cyan-50 text-sky-600 card" href="/gcse/computer-science">
 				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-7v2h3a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h3v-2H4a2 2 0 0 1-2-2zm18 11V5H4v11z"
 								fill="currentColor" />

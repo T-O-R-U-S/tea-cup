@@ -1,0 +1,60 @@
+{
+  "psychology": {
+    "brain_neuropsychology": [
+      {
+        "type": "multichoice",
+        "body": "Which two of the following statements about the reconstructive theory of memory are correct? Select two boxes.",
+        "marks": 2,
+        "correct": [
+          2,
+          4
+        ],
+        "choices": [
+          "Cultural and social expectations will not affect recall.",
+          "Information flows through sensory, short-term and long-term memory",
+          "Memory involves effort after meaning.",
+          "Memory is like a video recording.",
+          "The way we store and recall information is an active process."
+        ]
+      },
+      {
+        "type": "open",
+        "body": "Briefly evaluate the reconstructive theory of memory.",
+        "marks": 2,
+        "correct": "Up to 2 marks for evaluation of the reconstructive theory of memory.\n2 marks: a clear and detailed evaluation.\n1 mark: a limited or muddled evaluation.\nPossible content:\nAO3\n• There is research evidence to support the idea that people add effort after meaning when recalling\nevents. For example, in Bartlett’s ‘War of the Ghosts’ study, participants changed parts of the story\nwhen they retold it, showing that memories are reconstructed.\n• Not all memories are reconstructed. Research evidence shows that important personal events, such\nas our first day at school, are often accurately remembered.\n• The theory can be applied to everyday situations. It helps us understand why two different people,\nsuch as eyewitnesses, can give very different versions of the same events. Both have reconstructed\nthe events in different ways.\n• The theory is based on evidence that has higher ecological validity than memory research in which\nparticipants have to learn word lists. This is because retelling a story is a more familiar use of memory\nin everyday life than learning word lists.\n• The theory is still very popular despite being developed in the early 1900s.\nCredit other relevant evaluation.\nNOTE: No credit for evaluation of the ‘War of the Ghosts’ study alone, without reference to how it\nimpacts on the theory"
+      },
+      {
+        "type": "set",
+        "body": "Read the following box article:<br>TJ had a cycling accident which caused brain damage. He now suffers from some\nmemory loss. He cannot recall what he ate or was wearing the day before. He\nremembers that London is the capital of England and that the Eiffel Tower is in\nParis. TJ has also not forgotten how to play the piano and he can still ride his bike",
+        "questions": [
+          {
+            "type": "fields",
+            "body": "Use the article to identify two examples of procedural memory, two examples of\nsemantic memory and two examples of episodic memory.\nWrite your answers in the correct boxes",
+            "fields": [
+              "Procedural Memory (Example A)",
+              "Procedural Memory (Example B)",
+              "Semantic Memory (Example A)",
+              "Semantic Memory (Example B)",
+              "Episodic Memory (Example A)",
+              "Episodic Memory (Example B)"
+            ],
+            "correct": {
+              "Procedural Memory": [
+                "How to play the piano",
+                "How to ride a bike"
+              ],
+              "Semantic Memory": [
+                "London is the capital of England",
+                "The Eiffel Tower is in Paris"
+              ],
+              "Episodic Memory": [
+                "What he ate (the day before)",
+                "What he was wearing (the day before)"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root, document, body {
+    overflow-x: hidden;
+}
+
 * {
     font-family: 'Ubuntu';
 }
@@ -35,8 +39,4 @@ h6 {
 
 a {
     @apply text-blue-600;
-}
-
-a:visited {
-    @apply text-purple-700;
 }

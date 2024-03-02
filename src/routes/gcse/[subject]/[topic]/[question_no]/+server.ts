@@ -23,12 +23,12 @@ export async function PUT({ url, params, request }) {
 				content: answer
 			}
 		],
-		model: "gpt-3.5-turbo-16k",
+		model: "gpt-3.5-turbo",
 
 	});
 
 	console.log(answer);
-	console.log(completion.choices[0])
+	console.log(completion.choices);
 
 	return new Response(JSON.stringify(completion.choices[0]))
 }

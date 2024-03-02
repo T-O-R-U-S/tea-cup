@@ -6,8 +6,8 @@
         "body": "Which two of the following statements about the reconstructive theory of memory are correct? Select two boxes.",
         "marks": 2,
         "correct": [
-          2,
-          4
+          "Memory involves effort after meaning.",
+          "The way we store and recall information is an active process."
         ],
         "choices": [
           "Cultural and social expectations will not affect recall.",
@@ -26,7 +26,7 @@
       {
         "type": "set",
         "body": "Read the following box article:<br>TJ had a cycling accident which caused brain damage. He now suffers from some\nmemory loss. He cannot recall what he ate or was wearing the day before. He\nremembers that London is the capital of England and that the Eiffel Tower is in\nParis. TJ has also not forgotten how to play the piano and he can still ride his bike",
-        "marks": 6,
+        "marks": 9,
         "questions": [
           {
             "type": "fields",
@@ -54,6 +54,12 @@
                 "What he was wearing (the day before)"
               ]
             }
+          },
+          {
+            "type": "open",
+            "body":"Psychologists sometimes study unique individuals like TJ using a case study.<br>Briefly evaluate the use of case studies in psychological research.",
+            "marks": 3,
+            "correct": "Up to 3 marks for evaluation of the use of case studies in psychological research.\n3 marks: a clear and detailed evaluation.\n2 marks: a limited evaluation.\n1 mark: a very limited/muddled evaluation.\nPossible content:\nAO3\n• The information provided by a case study is very detailed.\n• The information gathered from a case study cannot be applied to a wider population because it is very\nspecific to the participants involved.\n• There are various ethical issues to consider when carrying out a case study. For example, because\nthe participants are so unique, it may be possible to identify them from any reports of the results. This\nmay prevent data about participants remaining confidential.\n• Case studies are a good way of studying unusual behaviours/phenomena that cannot be studied using\nother methods. In doing so, they often help our understanding of what is ‘normal’.\n• Case studies record behaviour over time. This allows changes in behaviour to be seen.\nAccept other relevant content."
           }
         ]
       }

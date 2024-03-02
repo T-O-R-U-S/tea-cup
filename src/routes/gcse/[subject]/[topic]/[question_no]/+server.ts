@@ -1,5 +1,6 @@
 import { OPEN_AI_API_KEY } from '$env/static/private';
 import OpenAI from 'openai';
+import JSON5 from 'json5';
 
 import questions from '$lib/../questions.json';
 import prompt_dir from '$lib/evaluator_prompt.txt';
@@ -9,6 +10,7 @@ const prompt = fs.readFileSync('./' + prompt_dir);
 const openai = new OpenAI({ apiKey: OPEN_AI_API_KEY });
 
 export async function PUT({ params, request }) {
+	console.log(request);
 	let answer = await request.json();
 	answer = JSON.stringify(answer, null, 2);
 	const question = JSON.stringify(questions[params.subject][params.topic][params.question_no], null, 2);

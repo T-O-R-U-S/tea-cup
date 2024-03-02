@@ -31,10 +31,10 @@
 
 		chat_gpt_out = await fetch($page.url, {
 			method: "PUT",
-			body: JSON5.stringify(answer)
+			body: JSON.stringify(answer)
 		})
 			.then(t => t.json())
-			.then(t => JSON.parse(t.message.content));
+			.then(t => JSON5.parse(t.message.content));
 
 		fill_tea()
 	}

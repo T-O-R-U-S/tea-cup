@@ -61,6 +61,6 @@
 	{/if}
 	<div
 		class="bg-red-200 border-red-700 border-8 p-5 rounded-xl text-red-800 shadow-xl outline-white outline outline-8 mt-10">
-		<h2>{chat_gpt_out.mark} out of {question.marks}</h2>
+		<h2>{chat_gpt_out.mark || 0} out of {question.marks}</h2>
 	</div>
 </div>

@@ -19,7 +19,7 @@
 
 		<ol class="grid grid-flow-row grid-cols-2 gap-y-5 text-2xl">
 			{#each question.choices as choice, idx}
-				<li class="flex items-center even:bg-slate-200 odd:bg-blue-200 p-5 m-2 rounded-xl"><input type="checkbox" name={`choice_${idx}`} id={`choice_${idx}`} bind:group={answer["choices"]} value={question.choices[idx]} class="h-full aspect-square m-2"> {choice}</li>
+				<li class="flex items-center even:bg-slate-200 odd:bg-blue-200 p-5 m-2 rounded-xl"><input type="checkbox" name={`choice_${idx}`} id={`choice_${idx}`} bind:group={answer["choices"]} value={question.choices[idx]} class="h-8 aspect-square m-2"> {choice}</li>
 			{/each}
 			{#if mark}
 			<li class="bg-emerald-200 m-2 rounded-xl font-black">

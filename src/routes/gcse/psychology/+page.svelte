@@ -4,7 +4,7 @@
 <main class="w-screen h-screen overflow-x-hidden overflow-y-scroll bg-yellow-50 flex flex-col items-center pt-40">
 	<div class="sweep transition-all bg-amber-400 flex absolute top-0 left-0 overflow-x-visible w-max pt-40 pb-1 -mt-36 -ml-20">
 		{#each new Array(8) as _}
-			<h2 class="mx-5">Welcome to Psychology 🧠</h2>
+			<h2 class="mx-5 text-center">Welcome to Psychology 🧠</h2>
 		{/each}
 	</div>
 
@@ -12,7 +12,7 @@
 
 	<h3 class="my-5">Select a Topic.</h3>
 
-	<ul class="">
+	<ul class="grid grid-cols-2 gap-3">
 		<li><a href="/gcse/psychology/brain_neuropsychology/0">Brain and Neuropsychology</a></li>
 		<li>Social Influence</li>
 		<li>Research Method</li>

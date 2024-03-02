@@ -64,5 +64,21 @@
         ]
       }
     ]
+  },
+  "computer-science": {
+    "data_representation": [
+      {
+        "type": "open",
+        "body": "Convert the binary number 11010100 into decimal",
+        "marks": 1,
+        "correct": "212"
+      },
+      {
+        "type": "open",
+        "marks": 2,
+        "body": "Convert the binary number 10111001 into hexadecimal.",
+        "correct": "The answer is the text 'B9'. The student should receive one mark for each correct digit in the correct position."
+      }
+    ]
   }
 }

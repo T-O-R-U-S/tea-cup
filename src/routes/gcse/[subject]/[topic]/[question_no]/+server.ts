@@ -10,13 +10,16 @@ const openai = new OpenAI({ apiKey: OPEN_AI_API_KEY });
 
 export async function PUT({ url, params, request }) {
 	let answer = await request.text();
+	let question = JSON.stringify(questions[params.subject][params.topic][params.question_no]);
+
+	console.log(question);
 
 	const completion = await openai.chat.completions.create({
 		messages: [
 			{
 				role: "system",
 				name: "Teacup",
-				content: `${prompt}\n${JSON.stringify(questions[params.subject][params.topic][params.question])}`
+				content: `${prompt}\n\nQUESTION AND MARK SCHEME:\n${question}`
 			},
 			{
 				role: "user",

@@ -11,8 +11,6 @@
 
 	$: question = data.questions[0];
 
-	console.log(question);
-
 	let chat_gpt_out: any | null = null;
 
 	$: chat_gpt_out = null;

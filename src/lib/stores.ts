@@ -17,5 +17,6 @@ tea_level.subscribe(t => {
 tea_fill.subscribe(t => {
 	if(t >= __tea_target) {
 		tea_level.update(l => l + 1)
+		tea_fill.set(0)
 	}
 })

@@ -2,10 +2,12 @@
 	import Teacup from '$lib/teacup.svelte'
 	import { tea_fill, tea_target, tea_level } from '$lib/stores';
 
-	let fill_up = Math.min(Math.floor($tea_fill / $tea_target), 100);
+	let fill_up = Math.min(Math.floor(100 * $tea_fill / $tea_target), 100);
+
+	$: fill_up = Math.min(Math.floor(100 * $tea_fill / $tea_target), 100);
 
 	tea_fill.subscribe(() => {
-		fill_up = Math.min(Math.floor($tea_fill / $tea_target), 100);
+		fill_up = Math.min(Math.floor(100 * $tea_fill / $tea_target), 100);
 	})
 </script>
 
@@ -34,18 +36,19 @@
 			</a>
 		</nav>
 
-		<div class="flex flex-col items-center justify-center aspect-video shadow-md bg-white rounded-xl border-black border-8 my-20 p-4">
-			<h2 class="py-20">Today, your cup is... <span class="text-emerald-400">{fill_up}% full</span>!</h2>
-
-
-				<div
-					class="aspect-square h-full flex flex-col items-center justify-center">
-					<div
-						class="h-1/2 w-1/2 border-8 border-t-0 rounded-t-none border-black rounded-b-full justify-end items-center flex text-black flex-col overflow-clip">
-						<div class="h-1/2 rounded-b-full bg-green-200 w-full border-4 border-white" id="tea" style:height="{fill_up}%">
-						</div>
-					</div>
-				</div>
+		<div class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 max-w-5xl gap-5 items-center justify-center shadow-md bg-white rounded-xl border-black border-8 my-20 p-4">
+			<div class="flex flex-col w-full h-full shadow-xl rounded-xl p-5">
+				<h2>Today, your cup is {fill_up}% full.</h2>
+			</div>
+			<div class="flex flex-col w-full h-full">
+				<h2>You've attained {$tea_fill} tea leaves.</h2>
+			</div>
+			<div class="flex flex-col w-full h-full">
+				<h2>Your tea target is {$tea_target} tea leaves.</h2>
+			</div>
+			<div class="flex flex-col w-full h-full">
+				<h2>You are {$tea_target - $tea_fill} tea leaves away from levelling up to level {$tea_level + 1}!</h2>
+			</div>
 		</div>
 
 	</div>

@@ -1,3 +1,7 @@
+<script>
+	import Teacup from '$lib/teacup.svelte'
+</script>
+
 <main>
 	<div id="content">
 		<h1 class="p-5 py-20">Welcome to Tea Cup 🍵</h1>
@@ -35,6 +39,7 @@
 		</div>
 
 	</div>
+	<Teacup />
 </main>
 
 <style>

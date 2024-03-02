@@ -9,7 +9,7 @@
 	}
 </script>
 
-<div class="text-center mt-auto">
+<div class="text-center mt-10">
 	{#if chat_gpt_out.comments}
 		<div
 			class="border-black border-8 outline-white outline-8 shadow-xl outline text-slate-500 rounded-xl p-5 flex items-center justify-center rotate-6 mt-6">

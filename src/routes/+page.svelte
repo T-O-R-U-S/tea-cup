@@ -1,6 +1,6 @@
 <script>
-	import Teacup from '$lib/teacup.svelte'
-	import { tea_fill, tea_target, tea_level } from '$lib/stores';
+	import Teacup from '$lib/teacup.svelte';
+	import { tea_fill, tea_level, tea_target } from '$lib/stores';
 
 	let fill_up = Math.min(Math.floor(100 * $tea_fill / $tea_target), 100);
 
@@ -33,6 +33,14 @@
 								fill="currentColor" />
 				</svg>
 				<b class="p-2">Comp Sci.</b>
+			</a>
+
+			<a class="bg-emerald-50 text-emerald-600 card" href="/generator">
+				<svg class="w-full" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12.275 15.525q1.75 0 2.975-1.125t1.225-2.725q0-1.425-.913-2.412t-2.212-.988q-1.175 0-1.987.75t-.813 1.85q0 .475.163.938t.562.812q.4.35.8.288t.65-.338q.25-.275.288-.663T12.7 11.2q-.05-.05-.1-.125t-.05-.175q0-.275.225-.437t.575-.163q.5 0 .825.413t.325.987q0 .775-.638 1.313t-1.562.537q-1.175 0-1.987-.95T9.5 10.275q0-.475.113-.925t.337-.85q.2-.375.2-.788T9.85 7q-.3-.3-.725-.288t-.65.363q-.5.7-.75 1.5t-.25 1.675q0 2.2 1.4 3.738t3.4 1.537M7 22q-.425 0-.712-.288T6 21v-3.3q-1.425-1.3-2.212-3.037T3 11q0-3.75 2.625-6.375T12 2q3.125 0 5.538 1.838t3.137 4.787l1.3 5.125q.125.475-.175.863T21 15h-2v3q0 .825-.587 1.413T17 20h-2v1q0 .425-.288.713T14 22z"
+								fill="currentColor" />
+				</svg>
+				<b class="p-2">Generate</b>
 			</a>
 		</nav>
 

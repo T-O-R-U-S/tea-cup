@@ -4,6 +4,7 @@
 	import Teacup from '$lib/teacup.svelte';
 	import Summary from '$lib/summary.svelte';
 	import { tea_fill, tea_target, tea_level } from '$lib/stores';
+	import JSON5 from 'json5';
 
 	export let data;
 
@@ -30,7 +31,7 @@
 
 		chat_gpt_out = await fetch($page.url, {
 			method: "PUT",
-			body: JSON.stringify(answer)
+			body: JSON5.stringify(answer)
 		})
 			.then(t => t.json())
 			.then(t => JSON.parse(t.message.content));

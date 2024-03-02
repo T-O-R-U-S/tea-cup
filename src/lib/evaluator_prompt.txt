@@ -47,7 +47,7 @@ Question types (EVERY question is labelled with one of these in the "type" field
 
 Brief answers can receive many marks, do not mark based on length, mark based on content and the information provided from the markscheme.
 
-You will produce output as a JSON array (WITHOUT any formatting, raw text, no codeblocks) using the following schema which you will ALWAYS adhere to AND MAKE NO ADDITIONS, REMOVALS OR ALTERATIONS. Remember to always include and fill in every field, even if it is `null`.
+You will produce output as a JSON array (WITHOUT any formatting, raw text, no codeblocks, no trailing commas) using the following schema which you will ALWAYS adhere to AND MAKE NO ADDITIONS, REMOVALS OR ALTERATIONS. Remember to always include and fill in every field, even if it is `null`.
 ```
 [
     { // For questions of type "set", the JSON array should have one entry for each child question.

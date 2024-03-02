@@ -1,0 +1,64 @@
+<script lang="ts">
+	import Question from '$lib/question.svelte';
+	import Summary from '$lib/summary.svelte';
+	import Teacup from '$lib/teacup.svelte';
+	import { page } from '$app/stores';
+	import { tea_fill, tea_level } from '$lib/stores';
+
+	import JSON5 from 'json5';
+
+	let subject;
+	let topic;
+
+	let question = null;
+
+	let chat_gpt_out = null;
+
+	async function send_req() {
+		console.log(answer);
+
+		chat_gpt_out = await fetch(`${$page.url}/mark`, {
+			method: "PUT",
+			body: JSON.stringify({ question, answer })
+		})
+			.then(t => t.json())
+			.then(t => JSON.parse(t.message.content));
+
+		fill_tea()
+	}
+
+	function fill_tea() {
+		for(let output of chat_gpt_out) {
+			tea_fill.update(t => t + output.mark * Math.floor(25 / $tea_level))
+		}
+	}
+
+	async function get_question() {
+			question = await fetch(`/generator?subject=${subject}&topic=${topic}`)
+				.then(async t => t.json())
+				.then(t => JSON5.parse(t));
+
+			chat_gpt_out = null;
+	}
+
+	let answer: any;
+</script>
+
+<main class="flex flex-col items-center justify-center w-screen h-screen overflow-y-auto overflow-x-hidden">
+	<h2>Please input a GCSE topic that you'd like to be quizzed about</h2>
+	<input type="text" name="subject" id="subject" bind:value={subject} placeholder="Subject..." class="my-2.5 p-3 text-lg border-4 border-black rounded-xl w-96">
+	<input type="text" name="topic" id="topic" bind:value={topic} placeholder="Topic..." class="my-2.5 p-3 text-lg border-4 border-black rounded-xl w-96">
+	<button on:click={get_question} class="bg-emerald-300 p-4 rounded-xl w-96">Generate Question</button>
+
+	{#if question}
+		{#if chat_gpt_out}
+			{#each chat_gpt_out as output, idx}
+				<Summary chat_gpt_out={output} {question} {idx} />
+			{/each}
+		{:else}
+				<Question {question} bind:answer mark={send_req} />
+		{/if}
+	{/if}
+
+	<Teacup />
+</main>

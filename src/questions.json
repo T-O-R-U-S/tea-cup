@@ -26,10 +26,12 @@
       {
         "type": "set",
         "body": "Read the following box article:<br>TJ had a cycling accident which caused brain damage. He now suffers from some\nmemory loss. He cannot recall what he ate or was wearing the day before. He\nremembers that London is the capital of England and that the Eiffel Tower is in\nParis. TJ has also not forgotten how to play the piano and he can still ride his bike",
+        "marks": 6,
         "questions": [
           {
             "type": "fields",
             "body": "Use the article to identify two examples of procedural memory, two examples of\nsemantic memory and two examples of episodic memory.\nWrite your answers in the correct boxes",
+            "marks": 6,
             "fields": [
               "Procedural Memory (Example A)",
               "Procedural Memory (Example B)",

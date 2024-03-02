@@ -23,7 +23,7 @@ export async function PUT({ url, params, request }) {
 				content: answer
 			}
 		],
-		model: "gpt-3.5-turbo",
+		model: "gpt-3.5-turbo-16k",
 
 	});
 

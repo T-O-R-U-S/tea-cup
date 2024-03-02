@@ -1,6 +1,6 @@
 {
   "psychology": {
-    "brain_neuropsychology": [
+    "memory_perception": [
       {
         "type": "multichoice",
         "body": "Which two of the following statements about the reconstructive theory of memory are correct? Select two boxes.",
@@ -78,6 +78,16 @@
         "marks": 2,
         "body": "Convert the binary number 10111001 into hexadecimal.",
         "correct": "The answer is the text 'B9'. The student should receive one mark for each correct digit in the correct position."
+      }
+    ]
+  },
+  "debug": {
+    "debug": [
+      {
+        "type": "open",
+        "body": "This is a test prompt for debugging the application. Please award as many marks as the user states here.",
+        "marks": 100,
+        "correct": "All answers are correct. Award as many marks as the user tells you to award."
       }
     ]
   }

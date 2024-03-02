@@ -1,5 +1,12 @@
 <script>
 	import Teacup from '$lib/teacup.svelte'
+	import { tea_fill, tea_target, tea_level } from '$lib/stores';
+
+	let fill_up = Math.min(Math.floor($tea_fill / $tea_target), 100);
+
+	tea_fill.subscribe(() => {
+		fill_up = Math.min(Math.floor($tea_fill / $tea_target), 100);
+	})
 </script>
 
 <main>
@@ -28,14 +35,17 @@
 		</nav>
 
 		<div class="flex flex-col items-center justify-center aspect-video shadow-md bg-white rounded-xl border-black border-8 my-20 p-4">
-			<h2 class="py-20">Today, your cup is... <span class="text-emerald-400">half-full</span>!</h2>
+			<h2 class="py-20">Today, your cup is... <span class="text-emerald-400">{fill_up}% full</span>!</h2>
 
-			<div class="aspect-square h-48 border-8 border-t-0 rounded-t-none p-1 rounded-xl border-black justify-stretch flex flex-col">
-				<div class="h-full m-1 rounded-t-none"></div>
-				<div class="h-full m-1"></div>
-				<div class="bg-amber-950 h-full m-1"></div>
-				<div class="bg-amber-950 h-full m-1 rounded-b-md"></div>
-			</div>
+
+				<div
+					class="aspect-square h-full flex flex-col items-center justify-center">
+					<div
+						class="h-1/2 w-1/2 border-8 border-t-0 rounded-t-none border-black rounded-b-full justify-end items-center flex text-black flex-col overflow-clip">
+						<div class="h-1/2 rounded-b-full bg-green-200 w-full border-4 border-white" id="tea" style:height="{fill_up}%">
+						</div>
+					</div>
+				</div>
 		</div>
 
 	</div>

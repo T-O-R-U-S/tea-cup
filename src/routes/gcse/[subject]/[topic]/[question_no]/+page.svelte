@@ -3,6 +3,7 @@
 	import Question from '$lib/question.svelte';
 	import Teacup from '$lib/teacup.svelte';
 	import Summary from '$lib/summary.svelte';
+	import { tea_fill, tea_target, tea_level } from '$lib/stores';
 
 	export let data;
 
@@ -22,15 +23,27 @@
 
 	let height: number = 75;
 
+	let currently_marking = false;
+
 	async function send_req() {
 		console.log(answer);
+
+		currently_marking = true;
 
 		chat_gpt_out = await fetch($page.url, {
 			method: "PUT",
 			body: JSON.stringify(answer)
 		})
 			.then(t => t.json())
-			.then(t => JSON.parse(t.message.content))
+			.then(t => JSON.parse(t.message.content));
+
+		fill_tea()
+	}
+
+	function fill_tea() {
+		for(let output of chat_gpt_out) {
+			tea_fill.update(t => t + output.mark * Math.floor(25 / $tea_level))
+		}
 	}
 </script>
 
@@ -45,7 +58,7 @@
 		</div>
 	{/if}
 
-	<div class="mt-auto -mb-20 py-5 overflow-x-scroll w-full px-5 flex flex-col items-center">
+	<div class="mt-auto py-5 h-max w-full px-5 flex flex-col items-center">
 	<h2 class="my-5">Select a question</h2>
 		<div class="flex">
 			{#each new Array(data.topic_length) as _, question_no}

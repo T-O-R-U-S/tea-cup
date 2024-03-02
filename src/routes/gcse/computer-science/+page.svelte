@@ -17,8 +17,8 @@
 		<li class="-rotate-6 hover:scale-150 hover:z-10">Programming</li>
 		<li class="-rotate-3 hover:scale-150 hover:z-10"><a href="/gcse/computer-science/data_representation/0">Fundamentals of data representation</a></li>
 		<li class="rotate-1 hover:scale-150 hover:z-10">Computer Systems</li>
-		<li class="rotate-2 hover:scale-150 hover:z-10">Fundamentals of computer networks</li>
-		<li class="rotate-1 hover:scale-150 hover:z-10">Cyber Security</li>
+		<li class="rotate-1 hover:scale-150 hover:z-10">Fundamentals of computer networks</li>
+		<li class="rotate-2 hover:scale-150 hover:z-10">Cyber Security</li>
 	</ul>
 </main>
 

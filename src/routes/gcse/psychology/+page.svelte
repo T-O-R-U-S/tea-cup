@@ -12,13 +12,13 @@
 
 	<h3 class="my-5">Select a Topic.</h3>
 
-	<ul class="grid grid-cols-2 gap-3">
-		<li><a href="/gcse/psychology/brain_neuropsychology/0">Brain and Neuropsychology</a></li>
-		<li>Social Influence</li>
-		<li>Research Method</li>
-		<li>Perception</li>
-		<li>Development</li>
-		<li>Social Influence</li>
+	<ul class="grid grid-cols-2 gap-3 *:bg-white *:p-5 *:font-bold *:text-center *:rounded-xl *:outline *:outline-white *:border-4 *:shadow-xl *:border-black *:outline-4 *:transition-all">
+		<li class="rotate-2 hover:scale-150 hover:z-10">Brain and Neuropsychology</li>
+		<li class="-rotate-6 hover:scale-150 hover:z-10">Social Influence</li>
+		<li class="-rotate-3 hover:scale-150 hover:z-10">Research Method</li>
+		<li class="rotate-3 hover:scale-150 hover:z-10"><a href="/gcse/psychology/memory_perception/0">Memory and Perception</a></li>
+		<li class="rotate-2 hover:scale-150 hover:z-10">Development</li>
+		<li class="rotate-1 hover:scale-150 hover:z-10">Social Influence</li>
 	</ul>
 </main>
 

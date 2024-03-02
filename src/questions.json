@@ -21,16 +21,17 @@
         "type": "open",
         "body": "Briefly evaluate the reconstructive theory of memory.",
         "marks": 2,
+        "information": "You should award one mark per one point of evaluation. If there is only one point, award only one mark.",
         "correct": "Up to 2 marks for evaluation of the reconstructive theory of memory.\n2 marks: a clear and detailed evaluation.\n1 mark: a limited or muddled evaluation.\nPossible content:\nAO3\n• There is research evidence to support the idea that people add effort after meaning when recalling\nevents. For example, in Bartlett’s ‘War of the Ghosts’ study, participants changed parts of the story\nwhen they retold it, showing that memories are reconstructed.\n• Not all memories are reconstructed. Research evidence shows that important personal events, such\nas our first day at school, are often accurately remembered.\n• The theory can be applied to everyday situations. It helps us understand why two different people,\nsuch as eyewitnesses, can give very different versions of the same events. Both have reconstructed\nthe events in different ways.\n• The theory is based on evidence that has higher ecological validity than memory research in which\nparticipants have to learn word lists. This is because retelling a story is a more familiar use of memory\nin everyday life than learning word lists.\n• The theory is still very popular despite being developed in the early 1900s.\nCredit other relevant evaluation.\nNOTE: No credit for evaluation of the ‘War of the Ghosts’ study alone, without DIRECTLY mentioning the reconstructive theory and without DIRECTLY explaining how it has an impact."
       },
       {
         "type": "set",
-        "body": "Read the following box article:<br>TJ had a cycling accident which caused brain damage. He now suffers from some\nmemory loss. He cannot recall what he ate or was wearing the day before. He\nremembers that London is the capital of England and that the Eiffel Tower is in\nParis. TJ has also not forgotten how to play the piano and he can still ride his bike",
+        "body": "Read the following box article:<br><span class=\"font-normal text-lg\">TJ had a cycling accident which caused brain damage. He now suffers from some\nmemory loss. He cannot recall what he ate or was wearing the day before. He\nremembers that London is the capital of England and that the Eiffel Tower is in\nParis. TJ has also not forgotten how to play the piano and he can still ride his bike.</span>",
         "marks": 9,
         "questions": [
           {
             "type": "fields",
-            "body": "Use the article to identify two examples of procedural memory, two examples of\nsemantic memory and two examples of episodic memory.\nWrite your answers in the correct boxes",
+            "body": "<span class=\"font-normal text-lg\">Use the article to identify two examples of procedural memory, two examples of\nsemantic memory and two examples of episodic memory.\nWrite your answers in the correct boxes</span>",
             "marks": 6,
             "fields": [
               "Procedural Memory (Example A)",
@@ -57,7 +58,7 @@
           },
           {
             "type": "open",
-            "body":"Psychologists sometimes study unique individuals like TJ using a case study.<br>Briefly evaluate the use of case studies in psychological research.",
+            "body":"<span class=\"font-normal text-lg\">Psychologists sometimes study unique individuals like <br> TJ using a case study. Briefly evaluate the use of case studies in psychological research.</span>",
             "marks": 3,
             "correct": "Up to 3 marks for evaluation of the use of case studies in psychological research.\n3 marks: a clear and detailed evaluation.\n2 marks: a limited evaluation.\n1 mark: a very limited/muddled evaluation.\nPossible content:\nAO3\n• The information provided by a case study is very detailed.\n• The information gathered from a case study cannot be applied to a wider population because it is very\nspecific to the participants involved.\n• There are various ethical issues to consider when carrying out a case study. For example, because\nthe participants are so unique, it may be possible to identify them from any reports of the results. This\nmay prevent data about participants remaining confidential.\n• Case studies are a good way of studying unusual behaviours/phenomena that cannot be studied using\nother methods. In doing so, they often help our understanding of what is ‘normal’.\n• Case studies record behaviour over time. This allows changes in behaviour to be seen.\nAccept other relevant content."
           }

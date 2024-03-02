@@ -13,7 +13,8 @@
 </script>
 
 <div class="flex flex-col items-center text-center">
-	<h2 class="lg:w-2/3 my-5">{@html question.body}</h2>
+	<h2 class="lg:w-2/3">{@html question.body}</h2>
+	<h4 class="my-5 font-normal">For <span class="font-black">{question.marks}</span> marks</h4>
 
 	{#if question.type === "multichoice"}
 

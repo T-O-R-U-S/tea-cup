@@ -13,7 +13,7 @@
 
 <main>
 	<div id="content">
-		<h1 class="p-5 py-20">Welcome to Tea Cup 🍵</h1>
+		<h1 class="p-5 py-20 text-center">Welcome to Tea Cup 🍵</h1>
 
 		<h3 class="mb-5">Here are your pinned subjects.</h3>
 
@@ -36,18 +36,18 @@
 			</a>
 		</nav>
 
-		<div class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 max-w-5xl gap-5 items-center justify-center shadow-md bg-white rounded-xl border-black border-8 my-20 p-4">
-			<div class="flex flex-col w-full h-full shadow-xl rounded-xl p-5">
-				<h2>Today, your cup is {fill_up}% full.</h2>
+		<div class="grid-flow-row grid grid-cols-1 grid-rows-4 gap-x-5 md:grid-cols-2 md:grid-rows-2 max-w-5xl items-center justify-center shadow-md bg-white rounded-xl border-black border-8 my-20 p-4">
+			<div class="flex flex-col w-full h-full rounded-xl border-black border-8 border-b-0 rounded-b-none p-5 mr-5 bg-sky-100">
+				<h2>Currently, your cup is {fill_up}% full.</h2>
 			</div>
-			<div class="flex flex-col w-full h-full">
+			<div class="flex flex-col w-full h-full rounded-xl border-black border-8 border-b-0 rounded-b-none p-5 bg-red-200">
 				<h2>You've attained {$tea_fill} tea leaves.</h2>
 			</div>
-			<div class="flex flex-col w-full h-full">
-				<h2>Your tea target is {$tea_target} tea leaves.</h2>
+			<div class="flex flex-col w-full h-full bg-amber-100 p-5 mr-5 border-black border-8 border-t-0 rounded-xl rounded-t-none">
+				<h2>You're at level {$tea_level + 1}. Your tea target is {$tea_target} tea leaves.</h2>
 			</div>
-			<div class="flex flex-col w-full h-full">
-				<h2>You are {$tea_target - $tea_fill} tea leaves away from levelling up to level {$tea_level + 1}!</h2>
+			<div class="flex flex-col w-full h-full rounded-xl border-black border-8 border-t-0 rounded-t-none p-5 bg-green-200">
+				<h2>You are {$tea_target - $tea_fill} tea leaves away from levelling up to level {$tea_level + 2}!</h2> <!-- +2 is not a mistake. Internally, your tea level starts at 0, but on the user's end it starts at 1. -->
 			</div>
 		</div>
 

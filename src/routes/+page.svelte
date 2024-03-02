@@ -47,7 +47,7 @@
 				<h2>You're at level {$tea_level + 1}. Your tea target is {$tea_target} tea leaves.</h2>
 			</div>
 			<div class="flex flex-col w-full h-full rounded-xl border-black border-8 border-t-0 rounded-t-none p-5 bg-green-200">
-				<h2>You are {$tea_target - $tea_fill} tea leaves away from levelling up to level {$tea_level + 2}!</h2> <!-- +2 is not a mistake. Internally, your tea level starts at 0, but on the user's end it starts at 1. -->
+				<h2>You are {$tea_target - $tea_fill} tea leaves away from levelling up to level {$tea_level + 2}!</h2> <!-- +2 is not a mistake. Internally, your tea level starts at 0, but on the user's end it starts at 1, so the next level is "2" levels away. -->
 			</div>
 		</div>
 

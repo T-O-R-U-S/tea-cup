@@ -12,7 +12,7 @@
 <div class="text-center mt-auto">
 	{#if chat_gpt_out.comments}
 		<div
-			class="border-black border-8 outline-white outline-8 shadow-xl outline text-slate-500 rounded-xl p-5 flex items-center justify-center rotate-6">
+			class="border-black border-8 outline-white outline-8 shadow-xl outline text-slate-500 rounded-xl p-5 flex items-center justify-center rotate-6 mt-6">
 			<div class="-rotate-6 flex flex-col items-center justify-center">
 
 				<h3 class="px-4 flex items-center justify-center font-black text-slate-950">

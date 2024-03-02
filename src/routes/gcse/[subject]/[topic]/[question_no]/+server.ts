@@ -8,9 +8,10 @@ import * as fs from 'fs';
 const prompt = fs.readFileSync('./' + prompt_dir);
 const openai = new OpenAI({ apiKey: OPEN_AI_API_KEY });
 
-export async function PUT({ url, params, request }) {
-	let answer = await request.text();
-	let question = JSON.stringify(questions[params.subject][params.topic][params.question_no]);
+export async function PUT({ params, request }) {
+	let answer = await request.json();
+	answer = JSON.stringify(answer, null, 2);
+	const question = JSON.stringify(questions[params.subject][params.topic][params.question_no], null, 2);
 
 	console.log(question);
 

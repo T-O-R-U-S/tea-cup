@@ -50,7 +50,7 @@
 
 <main class="flex flex-col items-center w-screen h-screen overflow-x-hidden">
 	{#if currently_marking}
-	<h2>Please wait while we mark...</h2>
+	<h2 class="my-auto">Please wait while we mark...</h2>
 	{:else}
 	{#if chat_gpt_out}
 		{#each chat_gpt_out as result, idx}

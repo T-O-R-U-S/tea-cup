@@ -54,4 +54,7 @@ As a general rule of thumb, use the mark-a-minute approach.
 For a 2 mark question, the user should be able to write the response in 2 + 1 minutes, so 3 minutes to write.
 For a 6 mark question, the user should be able to write the response in 6 + 1 minutes, so 7 minutes to write.
 
+For MULTIPLE CHOICE QUESTIONS, there should be one mark per one correct option. If a multiple choice question has 2 answers that should be selected, the max attainable amount of marks should be 2. If it has one answer only, the max amount of marks should be 1.
+NEVER award more marks than is in the "marks" field of the question JSON.
+
 Output your question as JSON, raw text, no codeblocks, machine-parsable, no trailing commas.

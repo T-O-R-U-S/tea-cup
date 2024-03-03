@@ -14,15 +14,19 @@
 
 	let chat_gpt_out = null;
 
+	let generating = false;
+
 	async function send_req() {
 		console.log(answer);
 
+		generating = true;
 		chat_gpt_out = await fetch(`${$page.url}/mark`, {
 			method: "PUT",
 			body: JSON.stringify({ question, answer })
 		})
 			.then(t => t.json())
-			.then(t => JSON.parse(t.message.content));
+			.then(t => JSON5.parse(t.message.content));
+		generating = false;
 
 		fill_tea()
 	}
@@ -34,11 +38,13 @@
 	}
 
 	async function get_question() {
+		generating = true;
 			question = await fetch(`/generator?subject=${subject}&topic=${topic}`)
 				.then(async t => t.json())
 				.then(t => JSON5.parse(t));
+		generating = false;
 
-			chat_gpt_out = null;
+		chat_gpt_out = null;
 	}
 
 	let answer: any;
@@ -50,6 +56,9 @@
 	<input type="text" name="topic" id="topic" bind:value={topic} placeholder="Topic..." class="my-2.5 p-3 text-lg border-4 border-black rounded-xl w-96">
 	<button on:click={get_question} class="bg-emerald-300 p-4 rounded-xl w-96">Generate Question</button>
 
+	{#if generating}
+	<h2>Please wait while we generate...</h2>
+	{:else}
 	{#if question}
 		{#if chat_gpt_out}
 			{#each chat_gpt_out as output, idx}
@@ -58,6 +67,7 @@
 		{:else}
 				<Question {question} bind:answer mark={send_req} />
 		{/if}
+	{/if}
 	{/if}
 
 	<Teacup />

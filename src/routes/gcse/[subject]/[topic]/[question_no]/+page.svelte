@@ -35,6 +35,8 @@
 		})
 			.then(t => t.json())
 			.then(t => JSON5.parse(t.message.content));
+		
+			currently_marking = false;
 
 		fill_tea()
 	}
@@ -47,6 +49,9 @@
 </script>
 
 <main class="flex flex-col items-center w-screen h-screen overflow-x-hidden">
+	{#if currently_marking}
+	<h2>Please wait while we mark...</h2>
+	{:else}
 	{#if chat_gpt_out}
 		{#each chat_gpt_out as result, idx}
 			<Summary chat_gpt_out={result} {question} {idx} />
@@ -55,6 +60,7 @@
 		<div class="mt-auto h-max">
 			<Question {question} bind:answer mark={send_req}  />
 		</div>
+	{/if}
 	{/if}
 
 	<div class="mt-auto py-5 h-max w-full px-5 flex flex-col items-center">

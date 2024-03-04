@@ -24,6 +24,14 @@
 
 	let currently_marking = false;
 
+	async function on_fail() {
+		alert('ChatGPT produced invalid output.');
+
+		currently_marking = false;
+		chat_gpt_out = [];
+		answer = null;
+	}
+
 	async function send_req() {
 		console.log(answer);
 
@@ -34,7 +42,8 @@
 			body: JSON.stringify(answer)
 		})
 			.then(t => t.json())
-			.then(t => JSON5.parse(t.message.content));
+			.then(t => JSON5.parse(t.message.content))
+			.catch(on_fail);
 		
 			currently_marking = false;
 

@@ -1,5 +1,4 @@
 <script>
-	import Teacup from '$lib/teacup.svelte';
 	import { tea_fill, tea_level, tea_target } from '$lib/stores';
 
 	let fill_up = Math.min(Math.floor(100 * $tea_fill / $tea_target), 100);
@@ -60,7 +59,6 @@
 		</div>
 
 	</div>
-	<Teacup />
 </main>
 
 <style>

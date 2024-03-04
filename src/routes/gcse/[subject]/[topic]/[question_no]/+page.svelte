@@ -5,31 +5,41 @@
 	import Summary from '$lib/summary.svelte';
 	import { tea_fill, tea_target, tea_level } from '$lib/stores';
 	import JSON5 from 'json5';
+	import { beforeNavigate, onNavigate } from '$app/navigation';
 
 	export let data;
 
-	let question: object = data.questions[0];
+	let chat_gpt_out: any[] = [];
+	let answer: any = {};
 
-	$: question = data.questions[0];
+	onNavigate((nav) => {
+		refresh(nav.to.url.pathname !== `/gcse/${$page.params.subject}/${$page.params.topic}/${$page.params.question_no}`);
+	});
 
-	let chat_gpt_out: any | null = null;
 
-	$: chat_gpt_out = null;
+	function refresh(refresh_question: boolean) {
+			chat_gpt_out = []
+			answer = {}
+			
+			if(refresh_question) {
+				data.questions[0]["type"] = "nil";
+			}
 
-	let debug: boolean = true;
-
-	let answer: any;
-
-	let height: number = 75;
+			console.log(refresh_question)
+	}
 
 	let currently_marking = false;
 
 	async function on_fail() {
-		alert('ChatGPT produced invalid output.');
-
 		currently_marking = false;
-		chat_gpt_out = [];
-		answer = null;
+		chat_gpt_out = [{
+			error: ""
+		}];
+		answer = {};
+
+		return [{
+			error: "Whoops"
+		}];
 	}
 
 	async function send_req() {
@@ -45,29 +55,35 @@
 			.then(t => JSON5.parse(t.message.content))
 			.catch(on_fail);
 		
-			currently_marking = false;
+		currently_marking = false;
 
 		fill_tea()
 	}
 
 	function fill_tea() {
+		if(!chat_gpt_out) {
+			return
+		}
+
 		for(let output of chat_gpt_out) {
 			tea_fill.update(t => t + output.mark * Math.floor(25 / $tea_level))
 		}
 	}
+
+	console.log($page.url)
 </script>
 
 <main class="flex flex-col items-center w-screen h-screen overflow-x-hidden">
 	{#if currently_marking}
 	<h2 class="my-auto">Please wait while we mark...</h2>
 	{:else}
-	{#if chat_gpt_out}
+	{#if chat_gpt_out.length !== 0}
 		{#each chat_gpt_out as result, idx}
-			<Summary chat_gpt_out={result} {question} {idx} />
+			<Summary chat_gpt_out={result} question={data.questions[0]} {idx} />
 		{/each}
 	{:else}
 		<div class="mt-auto h-max">
-			<Question {question} bind:answer mark={send_req}  />
+			<Question question={data.questions[0]} bind:answer mark={send_req}  />
 		</div>
 	{/if}
 	{/if}
@@ -76,26 +92,12 @@
 	<h2 class="my-5">Select a question</h2>
 		<div class="flex">
 			{#each new Array(data.topic_length) as _, question_no}
-				<a rel="external" href="/gcse/{$page.params.subject}/{$page.params.topic}/{question_no}" class="card shadow-xl h-48 w-32 flex items-center justify-center text-7xl font-black text-white odd:bg-red-500 even:bg-blue-600 rounded-xl">
+				<a href="/gcse/{$page.params.subject}/{$page.params.topic}/{question_no}" class="card shadow-xl h-48 w-32 flex items-center justify-center text-7xl font-black text-white odd:bg-red-500 even:bg-blue-600 rounded-xl">
 					<span>{question_no+1}</span>
 				</a>
 			{/each}
 		</div>
 	</div>
-
-<!--	<a href="/">-->
-<!--		<div-->
-<!--			class="border-black border-8 aspect-square h-48 fixed left-5 bottom-5 rounded-full overflow-clip bg-clip-border flex flex-col items-center justify-center bg-white shadow-xl">-->
-<!--			<h4>Your teacup</h4>-->
-<!--			<div-->
-<!--				class="h-1/2 w-1/2 border-8 border-t-0 rounded-t-none border-black rounded-b-full justify-end items-center flex flex-col overflow-clip">-->
-<!--				<div class="h-1/2 rounded-b-full bg-green-200 w-full border-4 border-white" id="tea" style:height="{height}%">-->
-
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</a>-->
-	<Teacup />
 </main>
 
 

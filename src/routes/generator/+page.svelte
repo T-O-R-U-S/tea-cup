@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Question from '$lib/question.svelte';
 	import Summary from '$lib/summary.svelte';
-	import Teacup from '$lib/teacup.svelte';
 	import { page } from '$app/stores';
 	import { tea_fill, tea_level } from '$lib/stores';
 
@@ -82,6 +81,4 @@
 		{/if}
 	{/if}
 	{/if}
-
-	<Teacup />
 </main>

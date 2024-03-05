@@ -9,7 +9,22 @@
 
 	export let data;
 
-	let chat_gpt_out: any[] = [];
+	interface GptOut {
+		error?: string,
+		tips?: string,
+		mark?: number,
+		comments?: string,
+		thinking?: string,
+		praise?: string
+	}
+
+	let chat_gpt_out: GptOut[] = [{
+		"error": "VERY VERY VERY LONG DEBUG VERY VERY LONG DEBUG VERY VERY LONG DEBUG VERY VERY LONG DEBUG",
+		"tips": "debug",
+		"mark": 10,
+		"comments": "debug",
+		"praise": "Debug"
+	}];
 	let answer: any = {};
 
 	onNavigate((nav) => {

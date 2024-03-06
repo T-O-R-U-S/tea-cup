@@ -34,7 +34,7 @@ export async function PUT({ params, request }) {
 	});
 
 	console.log(answer);
-	console.log(completion.choices);
+	console.log(completion.choices[0]);
 
 	return new Response(JSON.stringify(completion.choices[0]))
 }

@@ -45,15 +45,18 @@
 
 	let currently_marking = false;
 
-	async function on_fail() {
+	async function on_fail(e) {
 		currently_marking = false;
 		chat_gpt_out = [{
 			error: ""
 		}];
 		answer = {};
 
+		console.error(e);
+
 		return [{
-			error: "Whoops"
+			error: "Whoops",
+			debug: e
 		}];
 	}
 
@@ -69,6 +72,8 @@
 			.then(t => t.json())
 			.then(t => JSON5.parse(t.message.content))
 			.catch(on_fail);
+
+		console.log(chat_gpt_out);
 		
 		currently_marking = false;
 
@@ -76,7 +81,7 @@
 	}
 
 	function fill_tea() {
-		if(!chat_gpt_out) {
+		if(!chat_gpt_out || !Array.isArray(chat_gpt_out)) {
 			return
 		}
 
@@ -92,7 +97,7 @@
 	{#if currently_marking}
 	<h2 class="my-auto">Please wait while we mark...</h2>
 	{:else}
-	{#if chat_gpt_out.length !== 0}
+	{#if chat_gpt_out.length !== 0 && Array.isArray(chat_gpt_out)}
 		{#each chat_gpt_out as result, idx}
 			<Summary chat_gpt_out={result} question={data.questions[0]} {idx} />
 		{/each}

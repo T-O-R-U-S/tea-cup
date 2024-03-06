@@ -34,8 +34,8 @@
 			method: "PUT",
 			body: JSON.stringify({ question, answer })
 		})
-			.then(t => t.json())
-			.then(t => JSON5.parse(t.message.content))
+			.then(t => t.text())
+			.then(t => JSON5.parse(t))
 			.catch(on_fail);
 		generating = false;
 

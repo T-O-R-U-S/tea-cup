@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
+	import {  } from 'svelte/transition';
 
 	export let chat_gpt_out: any;
 	export let question: any;
@@ -9,9 +9,11 @@
 	if (question.type === 'set') {
 		question = question.questions[idx];
 	}
+
+	export let transition = null;
 </script>
 
-<div class="mt-10 text-center" transition:slide={{ delay: 250, duration: 300, axis: 'x' }}>
+<div class="mt-10 text-center px-10" transition:transition>
 	{#if chat_gpt_out.comments}
 		<div
 			class="mt-6 flex rotate-6 items-center justify-center rounded-xl border-8 border-black p-5 text-slate-500 shadow-xl outline outline-8 outline-white"

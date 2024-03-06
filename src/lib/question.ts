@@ -33,4 +33,4 @@ interface QuestionSet {
 	questions: FullQuestion[]
 }
 
-type FullQuestion = QuestionSet | MultichoiceQuestion | OpenQuestion | FieldQuestion;
+export type FullQuestion = QuestionSet | MultichoiceQuestion | OpenQuestion | FieldQuestion;
